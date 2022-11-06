@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Press+Start+2P&display=swap');
+
+:root {
+  --color-1: #41444B;
+  --color-2: #F9F9F9;
+}
+
+[data-theme="dark"] {
+  --color-1: #F9F9F9;
+  --color-2: #41444B;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BACKGROUND */
+
+.background {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom right, #1b345b, #185792);
+  height: 100%; 
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+.circle-one {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: calc(100% - 75%);
+  border-radius: 50%;
+  filter: blur(30px);
+  -webkit-filter: blur(30px);
+  background-color: #277ace;
+  z-index: 1;
+}
+
+.circle-one::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.circle-two {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: calc(100% - 75%);
+  border-radius: 50%;
+  filter: blur(30px);
+  -webkit-filter: blur(30px);
+  background-image: linear-gradient(to bottom right, #445eb6, #8340a9);
+  z-index: 1;
+}
+
+.circle-two::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+/* MAIN */
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  font-family: 'Fredoka One', cursive;
+}
+
+.title {
+  padding: .5em 0;
+  text-align: center;
+  color: white;
+}
+
+.app {
+  width: 60%;
+  margin: 0 auto;
+  padding: 1em;
+  border-radius: 20px;
+  font-family: 'Press Start 2P', cursive;
+  background-color: var(--color-2);
+}
+
+.time-container {
+  width: 100%;
+  padding: 1em;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1em;
+  background-color: var(--color-1);
+}
+
+span {
+  padding: .5em 0;
+  text-align: end;
+  font-size: 4.5em;
+  color: var(--color-2);
+}
+
+span:nth-child(even) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 3em;
+}
+
+.time-button-container {
+  width: 100%;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
+
+.mobile {
+  display: none;
+}
+
+.wide {
+  display: block;
+}
+
+.wrap-hour {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 5px;
+}
+
+.wrap-minute {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.wrap-second {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 5px;
+}
+
+button {
+  min-width: 44px;
+  min-height: 44px;
+  color: var(--color-1);
+  background-color: var(--color-2);
+  box-shadow: 0 5px 0.1px var(--color-1);
+  border: 2px solid var(--color-1);
+  border-radius: 3px;
+  outline: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: all .1s ease;
+  font-family: 'Fredoka One', cursive;
+}
+
+button:active {
+  background-color: var(--color-1);
+  color: var(--color-2);
+  -webkit-transform: translate(0, 5px);
+  transform: translate(0, 5px);
+  box-shadow: none;
+}
+
+.disable-btn {
+  background-color: var(--color-1);
+  color: var(--color-2);
+  -webkit-transform: translate(0, 5px);
+  transform: translate(0, 5px);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.action-button-container {
+  margin-bottom: .5em;
+  display: grid;
+  gap: 1em;
+}
+
+.theme-btn {
+  position: absolute;
+  bottom: .5em;
+  right: .5em;
+  z-index: 3;
+}
+
+@media screen and (max-width: 700px) {
+  .app {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .app {
+    width: 90%;
+  }
+
+  .title {
+    font-size: 1.5em;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .wide {
+    display: none;
+  }
+
+  span {
+    font-size: 1.5em;
+  }
+
+  span:nth-child(even) {
+    font-size: 1.5em;
+  }
+
+  .wrap-hour {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+
+  .wrap-minute {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+
+  .wrap-second {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1b345b" />
+    <meta
+      name="description"
+      content="Timer App for Web Design Competition by ITCC 2022"
+    />
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <link rel="manifest" href="./assets/js/web.webmanifest">
+
+    <script src="./assets/js/index.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5b8fa639bb.js" crossorigin="anonymous"></script>
+
+    <title>Timer App | Web Design - ITCC 2022</title>
+  </head>
+  <body>
+    <div class="background">
+      <div class="circle-one"></div>
+      <div class="circle-two"></div>
+    </div>
+    <audio id="beep" src="./sounds/beep-04.wav"></audio>
+    <audio id="tick" src="./sounds/ticktock.mp3"></audio>
+    <div class="content" id="root">
+      <main>
+        <h1 class="title" style="margin-top:60px;">Timer Web Design - ITCC 2022</h1>
+        <div class="app">
+          <div class="time-container">
+            <span class="hour">0</span>
+            <span class="dot">:</span>
+            <span class="minute">0</span>
+            <span class="dot">:</span>
+            <span class="second">0</span>
+          </div>
+
+          <div class="time-button-container">
+            <div class="wrap-hour">
+              <button onclick=increaseHour() type="button" class="increase-btn mobile">+</button>
+              <button onclick=decreaseHour() type="button" class="decrease-btn">-</button>
+              <button onclick=increaseHour() type="button" class="increase-btn wide">+</button>
+            </div>
+
+            <div class="wrap-minute">
+              <button onclick=increaseMinute() type="button" class="increase-btn mobile">+</button>
+              <button onclick=decreaseMinute() type="button" class="decrease-btn">-</button>
+              <button onclick=increaseMinute() type="button" class="increase-btn wide">+</button>
+            </div>
+
+            <div class="wrap-second">
+              <button onclick=increaseSecond() type="button" class="increase-btn mobile">+</button>
+              <button onclick=decreaseSecond() type="button" class="decrease-btn">-</button>
+              <button onclick=increaseSecond() type="button" class="increase-btn wide">+</button>
+            </div>
+          </div>
+
+          <div class="action-button-container">
+            <button type="button" onclick=startCountdown() id="change-btn">Start</button>
+            <button type="button" onclick=stopCountdown() id="stop-btn" class="disable-btn" disabled>Stop</button>
+            <button type="button" onclick=startCountdown(0,5,0,1) id="change-btn">Presentasi</button>
+            <button type="button" onclick=startCountdown(0,3,0,1) id="change-btn">Tanya Jawab</button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <button class="theme-btn" id="theme-btn" onclick="changeTheme()"><i class="fa-regular fa-sun"></i></button>
+
+    <script src="./assets/js/register.js"></script>
+  </body>
+</html>
