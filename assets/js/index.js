@@ -102,7 +102,7 @@ function stopCountdown() {
   hour = 0;
   minute = 0;
   second = 0;
-  let loopBeep = 4;
+  let loopBeep = 2;
   $("#beep")[0].play();
 
   let beep = setInterval(function () {
